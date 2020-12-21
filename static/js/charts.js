@@ -4,7 +4,7 @@ function init() {
   // Use the list of sample names to populate the select options
   d3.json("static/data/samples.json").then((data) => {
     var sampleNames = data.names;
-    console.log(data);
+    //console.log(data);
     sampleNames.forEach((sample) => {
       selector
         .append("option")
@@ -67,7 +67,7 @@ function buildCharts(sample) {
     //console.log(resultArray);
     // Create a variable that holds the first sample in the array.
     var result = resultArray[0];
-    console.log(result);
+    //console.log(result);
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = result.otu_ids;
     //console.log(otu_ids);
@@ -81,7 +81,7 @@ function buildCharts(sample) {
     // so the otu_ids with the most bacteria are last. 
 
     var yticks = otu_ids.slice(0, 10).map(id => `OTU ${id}`).reverse();
-    console.log(yticks);
+    //console.log(yticks);
     // Create the trace for the bar chart. 
     var barData = [{
       x: sample_values.slice(0, 10).reverse(),
@@ -145,7 +145,7 @@ function buildCharts(sample) {
     
     //filter selected id for wash frequency
     var wFreq = parseFloat(resultWash.wfreq);
-    console.log(wFreq);
+    //console.log(wFreq);
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
       value: wFreq,
@@ -154,6 +154,7 @@ function buildCharts(sample) {
       mode: "gauge+number",
       gauge: {
         axis: {range: [null, 10]},
+        bar: { color: "black"},
         steps: [
           {range: [0,2], color: "red"},
           {range: [2,4], color: "orange"},

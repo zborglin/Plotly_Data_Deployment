@@ -1,0 +1,24 @@
+body {
+
+    color: #0a0a0e;
+}    
+    
+.jumbotron {
+    background-image: url("../images/banner.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    color: #d1d1f1;
+}
+
+.article-title, .article-p {
+    padding: 20px;
+}
+form {
+    padding: 5px;
+}
+
+#filter-btn {
+    width: 100%;
+}
+
+}
